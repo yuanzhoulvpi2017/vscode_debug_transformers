@@ -1,0 +1,103 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: 当前文件",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "torchr_ex2",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/yuanz/anaconda3/envs/hznet/bin/torchrun", //"${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--nnodes",
+                "1",
+                "--nproc-per-node",
+                "1",
+                "${file}",
+                "--model_name_or_path",
+                "my_model_xxx"
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "1",
+            }
+        },
+        {
+            "name": "torchrun_ex1",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/yuanz/anaconda3/envs/hznet/bin/torchrun", //"${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--nnodes",
+                "1",
+                "--nproc-per-node",
+                "1",
+                "${file}",
+                "--model_name_or_path",
+                "my_model"
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0",
+                "PYDEVD_DISABLE_FILE_VALIDATION": "1",
+            }
+        },
+        {
+            "name": "torchrun_copy",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/yuanz/anaconda3/envs/hznet/bin/torchrun", //"${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--nnodes",
+                "1",
+                "--nproc-per-node",
+                "1",
+                "${file}",
+                "--model_name_or_path",
+                "my_model"
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0",
+                "PYDEVD_DISABLE_FILE_VALIDATION": "1",
+            }
+        },
+        {
+            "name": "ds_zero2",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/yuanz/anaconda3/envs/hznet/bin/deepspeed", //"${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--num_nodes",
+                "1",
+                "--num_gpus",
+                "2",
+                "${file}",
+                "--deepspeed",
+                "./config/default_offlload_zero2.json",
+                "--model_name_or_path",
+                "my_model",
+                "--output_dir",
+                "hhh"
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0",
+                "PYDEVD_DISABLE_FILE_VALIDATION": "1",
+            }
+        },
+    ]
+}
