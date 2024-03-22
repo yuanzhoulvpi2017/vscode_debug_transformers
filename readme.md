@@ -51,3 +51,4 @@ except Exception as e:
 2. 你看打印出来的东西，是不是出现`Waiting for debugger attach`.一般来说，都很快，就出现了。
 3. 再在vscode的debug页面，选择`sh_file_debug`进行debug。
 4. 就基本上完成了。确实是很方便。
+5. **debug结束之后，别忘记把代码里面的 添加的代码，注销掉**
