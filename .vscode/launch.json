@@ -5,8 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "sh_file_debug",
+            "type": "debugpy",
+            "request": "attach",
+            "connect": {
+                "host": "localhost",
+                "port": 9501
+            }
+        },
+        {
             "name": "Python: 当前文件",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
@@ -14,7 +23,7 @@
         },
         {
             "name": "torchr_ex2",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "/home/yuanz/anaconda3/envs/hznet/bin/torchrun", //"${file}",
             "console": "integratedTerminal",
@@ -34,7 +43,7 @@
         },
         {
             "name": "torchrun_ex1",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "/home/yuanz/anaconda3/envs/hznet/bin/torchrun", //"${file}",
             "console": "integratedTerminal",
@@ -55,7 +64,7 @@
         },
         {
             "name": "torchrun_copy",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "/home/yuanz/anaconda3/envs/hznet/bin/torchrun", //"${file}",
             "console": "integratedTerminal",
@@ -76,7 +85,7 @@
         },
         {
             "name": "ds_zero2",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "/home/yuanz/anaconda3/envs/hznet/bin/deepspeed", //"${file}",
             "console": "integratedTerminal",
